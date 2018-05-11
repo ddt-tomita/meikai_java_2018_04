@@ -4,7 +4,7 @@
  * そうでなければ「BはAの約数ではありません。」と表示するプログラムを作成せよ。
  * 作成者：富田 涼子
  * 作成日：2018/05/02
- * 作成日：2018/05/02
+ * 作成日：2018/05/11
  */
 package e3_2;
 import java.util.Scanner;
@@ -19,19 +19,19 @@ public class E3_2 {
         // 整数Ａの入力を促す文字列を画面に表示する
         System.out.print("整数Ａ：");
         // 整数Ａの入力を画面から受け取り、変数integerValue1に入力文字列を格納する
-        int integerValue1 = standardInput.nextInt();
+        int inputValue1st = standardInput.nextInt();
 
         // 整数Ｂの入力を促す文字列を画面に表示する
         System.out.print("整数Ｂ：");
         // 整数Ｂの入力を画面から受け取り、変数integerValue2に入力文字列を格納する
-        int integerValue2 = standardInput.nextInt();
+        int inputValue2nd = standardInput.nextInt();
 
-        // 整数Ａ÷整数Ｂで余りが０ならばtrue
-        if (integerValue1 % integerValue2 == 0) {
+        // 整数Ａ÷整数Ｂで余りが０ならば、ＢはＡの約数である
+        if (inputValue1st % inputValue2nd == 0) {
             // ＢはＡの約数であることを表示する
             System.out.println("ＢはＡの約数です。");
-        // 整数Ａ÷整数Ｂで余りが０以外ならばtrue
-        } else if(integerValue1 % integerValue2 != 0) {
+        // 整数Ａ÷整数Ｂで余りが０以外ならば、ＢはＡの約数でない
+        } else if(inputValue1st % inputValue2nd != 0) {
             // ＢはＡの約数でないことを表示する
             System.out.println("ＢはＡの約数ではありません。");
         }
