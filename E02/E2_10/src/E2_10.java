@@ -12,7 +12,7 @@ public class E2_10 {
 
     //画面を通じて入力者に挨拶を行う
     public static void main(String[] args) {
-        // 標準入力ストリームのインスタンス化
+        // 標準入力ストリームのインスタンス化をする
         Scanner standardInput = new Scanner(System.in);
         // 姓の入力を促す文字列を画面に表示する
         System.out.print("姓：");
