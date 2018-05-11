@@ -18,11 +18,11 @@ public class E3_4 {
 
         // 変数aの値の入力を促す文字列を画面に表示する
         System.out.print("aの値：");
-        // 変数aの入力を画面から受け取り、変数integerValueに入力文字列を格納する
+        // 変数aの入力を画面から受け取り、aValueに入力文字列を格納する
         int aValue = standardInput.nextInt();
         // 変数bの値の入力を促す文字列を画面に表示する
         System.out.print("bの値：");
-        // 変数bの入力を画面から受け取り、変数integerValueに入力文字列を格納する
+        // 変数bの入力を画面から受け取り、bValueに入力文字列を格納する
         int bValue = standardInput.nextInt();
 
         // aの値とbの値に差異があるかの判定をする
