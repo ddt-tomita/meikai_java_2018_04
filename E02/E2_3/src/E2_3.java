@@ -14,14 +14,14 @@ class Exercise2_3 {
     // キーボードから読み込んだ整数をそのまま反復して表示する
     public static void main(String[] args) {
         // 標準入力ストリームのインスタンス化
-        Scanner StandardInput = new Scanner(System.in);
+        Scanner standardInput = new Scanner(System.in);
 
         // 整数値の入力を促す文字列を出力する
         System.out.print("整数値：");
         // 画面から入力された整数値を変数numberに入れ初期化する
-        int number = StandardInput.nextInt();
+        int inputNumber = standardInput.nextInt();
 
         // 入力された値を画面に表示する
-        System.out.println( number + "と入力しましたね。");
+        System.out.println( inputNumber + "と入力しましたね。");
     }
 }
