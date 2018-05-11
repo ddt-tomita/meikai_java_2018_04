@@ -12,21 +12,21 @@ import java.util.Scanner;
 public class E3_1 {
     // 整数値を読み込んで、その絶対値を求めて表示する
     public static void main(String[] args) {
-        // 標準入力ストリームのインスタンス化
+        // 標準入力ストリームのインスタンス化をする
         Scanner standardInput = new Scanner(System.in);
         // 整数値の入力を促す文字列を画面に表示する
         System.out.print("整数値：");
         // 整数値の入力を画面から受け取り、変数integerValueに入力文字列を格納する
         int integerValue = standardInput.nextInt();
 
-        // 画面から入力された整数値の符号が正ならtrue
+        // 絶対値を求めるために、画面から入力された整数値の符号を判定する。正ならtrue。
         if (integerValue > 0) {
-	        // 画面に入力された値の絶対値を表示する
-	        System.out.println("その絶対値は" + integerValue + "です");
-        // 画面から入力された整数値の符号が正ならtrue
+            // 画面に入力された値の絶対値を表示する
+            System.out.println("その絶対値は" + integerValue + "です");
+            // 絶対値を求めるために、画面から入力された整数値の符号を判定する。負ならtrue。
         } else if(integerValue < 0) {
-	        // 画面に入力された値の絶対値を表示する
-	        System.out.println("その絶対値は" + -integerValue + "です");
+            // 画面に入力された値の符号を反転させて、絶対値を表示する
+            System.out.println("その絶対値は" + -integerValue + "です");
         }
     }
 
