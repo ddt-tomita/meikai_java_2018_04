@@ -33,10 +33,16 @@ public class E3_12 {
 
         // inputValueAをminValueと仮定する
         minValue = inputValueA;
-        // inputValueBがminValueよりも小さければminValueにinputValueBを格納する
-        if (inputValueB < minValue) minValue = inputValueB;
-        // inputValueCがminValueよりも小さければminValueにinputValueCを格納する
-        if (inputValueC < minValue) minValue = inputValueC;
+        // inputValueBがminValueよりも小さいことを判定する
+        if (inputValueB < minValue) {
+            // inputValueBがminValueよりも小さければminValueにinputValueBを格納する
+            minValue = inputValueB;
+        }
+        // inputValueCがminValueよりも小さいことを判定する
+        if (inputValueC < minValue) {
+            // inputValueCがminValueよりも小さければminValueにinputValueCを格納する
+            minValue = inputValueC;
+        }
 
         // 画面から読み込んだ一番小さい整数値を出力する
         System.out.println("最小値は" + minValue + "です。");
