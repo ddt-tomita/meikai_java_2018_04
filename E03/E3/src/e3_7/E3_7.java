@@ -24,7 +24,7 @@ public class E3_7 {
         // 割り算に使う３の値を格納する、変数divisionValueを定義する
         int divisionValue = 3;
         // ３で割った余りの値を格納する、変数remainderValueを定義する
-        int remainderValue;
+        int remainderValue = 0;
 
         // 入力された値が正の整数値であるかを判定する
         if (inputValue > 0) {
