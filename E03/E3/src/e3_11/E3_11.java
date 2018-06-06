@@ -32,14 +32,10 @@ public class E3_11 {
         if (inputValueA < inputValueB) {
             // 大きいほうの値inputValueBから小さいほうの値inputValueAを引き、差を求める。
             marginValue = inputValueB - inputValueA;
-        // inputValueBのほうがinputValueAより小さいことを判定する
-        } else if (inputValueB < inputValueA){
-            // 大きいほうの値inputValueAから小さいほうの値inputValueBを引き、差を求める。
+            // inputValueBのほうがinputValueAより小さい場合と、二つの入力値が同じ値の場合はこちらに入る
+        } else {
+            // 大きいほうの値(または同じ値)inputValueAから小さいほうの値(または同じ値)inputValueBを引き、差を求める。
             marginValue = inputValueA - inputValueB;
-        // inputValueAとinputValueBが同じ値であることを判定する
-        } else if (inputValueA == inputValueB) {
-            // 入力された２つの整数値が同じ値なので、差が0になる
-            marginValue = 0;
         }
 
         // 入力された値の差が10以下であることを判定する
