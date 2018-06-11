@@ -27,25 +27,34 @@ public class E3_17 {
         // じゃんけんの入力を画面から受けとる
         standardInput.next();
 
-        // じゃんけんのもととなる乱数を作成する
-        int randomNumber = random.nextInt(3);
+        // 0～2の乱数を作成するための変数
+        int randomNumberBase = 3;
+        // じゃんけんのもととなる0～2の乱数を作成する
+        int randomNumber = random.nextInt(randomNumberBase);
+
+        // グーを表す変数
+        final int rockNumber = 0;
+        // チョキを表す変数
+        final int scissorsNumber = 1;
+        // パーを表す変数
+        final int paperNumber = 2;
 
         // 読み込んだ乱数の値ごとにじゃんけんの種類を決める
         switch ( randomNumber ){
-            // 乱数が0の場合
-            case 0 :
+            // 乱数が0(グー)の場合
+            case rockNumber :
                 // グーをだす
                 System.out.println("グー");
                 // switch文から抜ける
                 break;
-            // 乱数が1の場合
-            case 1 :
+            // 乱数が1(チョキ)の場合
+            case scissorsNumber :
                 // チョキをだす
                 System.out.println("チョキ");
                 // switch文から抜ける
                 break;
-            // 乱数が2の場合
-            case 2 :
+            // 乱数が2(パー)の場合
+            case paperNumber :
                 // パーを出す
                 System.out.println("パー");
                 // switch文から抜ける
