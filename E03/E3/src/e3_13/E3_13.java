@@ -3,7 +3,7 @@
  * 概要：キーボードから読み込んだ三つの整数値の中央値を求めて表示するプログラムを作成せよ。
  * 作成者：富田 涼子
  * 作成日：2018/06/10
- * 修正日：2018/06/10
+ * 修正日：2018/06/11
  */
 package e3_13;
 
@@ -42,11 +42,11 @@ public class E3_13 {
         String variableNameMax = "";
 
         // 中央値取得のために、variableNameMinまたはvariableNameMaxに格納するための変数
-        String inputValueA_String ="inputValueA";
+        String inputValueAString ="inputValueA";
         // 中央値取得のために、variableNameMinまたはvariableNameMaxに格納するための変数
-        String inputValueB_String ="inputValueB";
+        String inputValueBString ="inputValueB";
         // 中央値取得のために、variableNameMinまたはvariableNameMaxに格納するための変数
-        String inputValueC_String ="inputValueC";
+        String inputValueCString ="inputValueC";
 
 
 
@@ -54,53 +54,53 @@ public class E3_13 {
         // inputValueAをminValueと仮定する
         minValue = inputValueA;
         // 中央値取得のために、minValueに入る値の変数名"inputValueA"をvariableNameMinに格納する
-        variableNameMin = inputValueA_String;
+        variableNameMin = inputValueAString;
         // inputValueBがminValueよりも小さいことを判定する
         if (inputValueB < minValue) {
             // inputValueBがminValueよりも小さければminValueにinputValueBを格納する
             minValue = inputValueB;
             // 中央値取得のために、minValueに入る値の変数名"inputValueB"をvariableNameMinに格納する
-            variableNameMin = inputValueB_String;
+            variableNameMin = inputValueBString;
         }
         // inputValueCがminValueよりも小さいことを判定する
         if (inputValueC < minValue) {
             // inputValueCがminValueよりも小さければminValueにinputValueCを格納する
             minValue = inputValueC;
             // 中央値取得のために、minValueに入る値の変数名"inputValueC"をvariableNameMinに格納する
-            variableNameMin = inputValueC_String;
+            variableNameMin = inputValueCString;
         }
 
         // ★maxValueの設定
         // inputValueAをmaxValueと仮定する
         maxValue = inputValueA;
         // 中央値取得のために、maxValueに入る値の変数名"inputValueA"をvariableNameMaxに格納する
-        variableNameMax = inputValueA_String;
+        variableNameMax = inputValueAString;
         // inputValueBがmaxValueよりも大きいことを判定する
         if (inputValueB > maxValue) {
             // inputValueBがmaxValueよりも大きければmaxValueにinputValueBを格納する
             maxValue = inputValueB;
             // 中央値取得のために、maxValueに入る値の変数名"inputValueB"をvariableNameMaxに格納する
-            variableNameMax = inputValueB_String;
+            variableNameMax = inputValueBString;
         }
         // inputValueCがmaxValueよりも大きいことを判定する
         if (inputValueC > maxValue) {
             // inputValueCがmaxValueよりも大きければminValueにinputValueCを格納する
             maxValue = inputValueC;
             // 中央値取得のために、maxValueに入る値の変数名"inputValueC"をvariableNameMaxに格納する
-            variableNameMax = inputValueC_String;
+            variableNameMax = inputValueCString;
         }
 
         // ★middleValueの設定
         // inputValueAが最小値でも最大値でもないことを判定する
-        if (inputValueA_String != variableNameMin && inputValueA_String != variableNameMax) {
+        if (inputValueAString != variableNameMin && inputValueAString != variableNameMax) {
             // inputValueAはminValueでもmaxValueでもないので中央値となる
             middleValue = inputValueA;
         // inputValueBが最小値でも最大値でもないことを判定する
-        }else if (inputValueB_String != variableNameMin && inputValueB_String != variableNameMax) {
+        }else if (inputValueBString != variableNameMin && inputValueBString != variableNameMax) {
             // inputValueBはminValueでもmaxValueでもないので中央値となる
             middleValue = inputValueB;
         // inputValueCが最小値でも最大値でもないことを判定する
-        }else if (inputValueC_String != variableNameMin && inputValueC_String != variableNameMax) {
+        }else if (inputValueCString != variableNameMin && inputValueCString != variableNameMax) {
             // inputValueCはminValueでもmaxValueでもないので中央値となる
             middleValue = inputValueC;
         }
