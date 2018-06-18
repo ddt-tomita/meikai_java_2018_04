@@ -21,36 +21,61 @@ public class E3_18 {
         // 月の入力を画面から受け取り、inputMonthに格納する
         int inputMonth = standardInput.nextInt();
 
+        // 1月表す変数
+        final int january = 1;
+        // 2月を表す変数
+        final int february = 2;
+        // 3月を表す変数
+        final int march  = 3;
+        // 4月を表す変数
+        final int april = 4;
+        // 5月を表す変数
+        final int may = 5;
+        // 6月を表す変数
+        final int june = 6;
+        // 7月を表す変数
+        final int july = 7;
+        // 8月を表す変数
+        final int august = 8;
+        // 9月を表す変数
+        final int september = 9;
+        // 10月を表す変数
+        final int october = 10;
+        // 11月を表す変数
+        final int november = 11;
+        // 12月を表す変数
+        final int december = 12;
+
         // 入力された月から季節を判定する
         switch ( inputMonth ){
             // 3月から5月が入力された場合
-            case 3:
-            case 4:
-            case 5:
+            case march:
+            case april:
+            case may:
                 // 春と表示する
                 System.out.println("春です。");
                 // switch文から抜ける
                 break;
             // 6月から8月が入力された場合
-            case 6:
-            case 7:
-            case 8:
+            case june:
+            case july:
+            case august:
                 // 夏と表示する
                 System.out.println("夏です。");
                 // switch文から抜ける
                 break;
             // 9月から11月が入力された場合
-            case 9:
-            case 10:
-            case 11:
+            case september:
+            case october:
+            case november:
                 // 秋と表示する
                 System.out.println("秋です。");
                 // switch文から抜ける
                 break;
             // 12月から2月が入力された場合
-            case 12:
-            case 1:
-            case 2:
+            case december:
+            case january:
+            case february:
                 // 冬と表示する
                 System.out.println("冬です。");
                 // switch文から抜ける
