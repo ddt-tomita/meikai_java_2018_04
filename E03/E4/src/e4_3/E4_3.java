@@ -50,7 +50,7 @@ public class E4_3 {
             System.out.print(minValue);
             // 小さいほうの数に1ずつ足しこみ、次に出力する値を生成する
             minValue = minValue + 1;
-        // 次に出力する予定の値minValueがmaxValueプラス１未満の場合は繰り返し処理を行う
-        } while ( minValue != maxValue + 1  );
+        // 次に出力する予定の値minValueがmaxValue以下の場合は繰り返し処理を行う
+        } while ( minValue <= maxValue );
     }
 }
