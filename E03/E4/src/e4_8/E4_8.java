@@ -21,11 +21,15 @@ public class E4_8 {
         int inputValue = standardInput.nextInt();
         // 桁数を数えるための変数
         int countValue = 0;
+        // inputValueの桁数を数えきった時の値
+        final int inputValueEnd = 0;
+        // inputValueの桁数を削っていく値
+        final int inputValueDivision = 10;
 
         // inputValueの桁数を数えきるまでループする
-        while (inputValue > 0) {
+        while (inputValue > inputValueEnd) {
             // inputValueの桁数を１桁削る
-            inputValue /= 10;
+            inputValue /= inputValueDivision;
             // ループしながら桁数を数える
             countValue++;
         }
