@@ -21,9 +21,10 @@ public class E4_10 {
         int inputValue = standardInput.nextInt();
 
         // countIntの値がinputValueの値より小さいの間、繰り返し処理を行う。
-        for (int countInt = 0; countInt < inputValue; countInt++)
+        for (int countInt = 0; countInt < inputValue; countInt++) {
             // 画面に*を表示する
             System.out.print('*');
+        }
         // 読み込んだ値が１以上の場合
         if (inputValue > 0) {
             // 画面へ改行文字の出力を行う
