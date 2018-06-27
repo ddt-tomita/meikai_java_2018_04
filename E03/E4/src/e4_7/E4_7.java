@@ -26,7 +26,7 @@ public class E4_7 {
         // countDownValueの値がinputValueの値より小さいの間、繰り返し処理を行う。
         while (countValue < inputValue) {
             // 一番最初のループ時または偶数回目のループの際に*を出力する
-            if (countValue % 2 == 0 || countValue == 0) {
+            if (countValue % 2 == 0 ) {
                 // 画面に*を出力する
                 System.out.print('*');
             // 奇数回目のループの際に+を出力する
