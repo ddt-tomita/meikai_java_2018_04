@@ -55,13 +55,17 @@ public class E4_15 {
 
         // 項目名を画面に表示する
         System.out.println("身長  標準体重");
-        // 体重を表す変数
+        // 標準体重を表す変数
         double weightValue = 0;
+        // 標準体重を求める際、マイナスする値を格納する変数
+        final int weightMinusValue = 100;
+        // 標準体重を求める際、掛け算する値を格納する変数
+        final double weightMultiplyValue = 0.9;
 
         // 開始値から終了値まで繰り返し処理を行う
         while (inputValueFrom <= inputValueTo) {
-            // 標準体重を求めていく
-            weightValue = (inputValueFrom - 100) * 0.9;
+            // 標準体重を求めていく （身長－100）× 0.9
+            weightValue = (inputValueFrom - weightMinusValue) * weightMultiplyValue;
             // 身長体重を画面に表示していく
             System.out.println(inputValueFrom + "   " + weightValue);
             // 開始値に増分を足しこんでいく
