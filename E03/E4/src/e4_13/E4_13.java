@@ -20,9 +20,11 @@ public class E4_13 {
 
         // 画面から入力された値を格納するinputValueを宣言する
         int inputValue = 0;
+        // 入力された値を制限するための変数
+        int valueZero = 0;
 
         // 画面から入力された値が０以下であれば繰り返し処理を行う
-        for (int valueZero = 0; inputValue <= valueZero;) {
+        while (inputValue <= valueZero) {
             // 値の入力を促す文字列を画面に表示する
             System.out.print("nの値：");
             // 画面から入力された値をinputValueに格納する
