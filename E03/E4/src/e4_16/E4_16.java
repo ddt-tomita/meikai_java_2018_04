@@ -31,7 +31,7 @@ public class E4_16 {
             System.out.print('*');
             // countIntをインクリメントする
             countInt++;
-            // countIntが5の値で割り切れる場合
+            // countIntがnewLineValueの値で割り切れる場合
             if ( countInt % newLineValue == 0) {
                 // 改行処理を行う
                 System.out.println("");
