@@ -28,14 +28,14 @@ public class E4_18 {
             inputValue = standardInput.nextInt();
         }
 
-        // 2乗値した答え格納する変数
+        // 2乗した値を格納する変数
         int answerInt = 0;
 
-        // 計算している約数の値が読み込んだ整数値をこえるまで繰り返し処理を行う。
+        // 画面から入力された値の数だけループする
         for ( int countInt = 1; countInt <= inputValue; countInt++) {
-            // 読み込んだ整数値がdivisorIntで割り切れたら約数
+            // 2乗した値を格納する
             answerInt = countInt * countInt;
-            // 画面に約数を表示する
+            // nの2乗値を画面に出力する
             System.out.println(countInt + "の2乗は" + answerInt);
         }
     }
