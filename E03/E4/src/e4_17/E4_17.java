@@ -30,7 +30,7 @@ public class E4_17 {
         }
 
         // 約数の個数をカウントする変数
-        int countInt = 0;
+        int divisorCount = 0;
 
         // 計算している約数の値が読み込んだ整数値をこえるまで繰り返し処理を行う。
         for ( int divisorInt = 1; divisorInt <= inputValue; divisorInt++) {
@@ -38,11 +38,11 @@ public class E4_17 {
             if (inputValue % divisorInt == 0) {
                 // 画面に約数を表示する
                 System.out.println(divisorInt);
-                // 約数を出力する際カウントしていく
-                countInt++;
+                // 約数の個数をカウントしていく
+                divisorCount++;
             }
         }
         // 最後に約数の個数を表示する
-        System.out.println("約数は" + countInt + "個です。");
+        System.out.println("約数は" + divisorCount + "個です。");
     }
 }
