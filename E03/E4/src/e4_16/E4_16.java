@@ -21,14 +21,14 @@ public class E4_16 {
         int inputValue = standardInput.nextInt();
 
         // 改行時使用する値
-        final int newLineValue = 5;
+        final int NEW_LINE_VALUE = 5;
 
         // countIntの値がinputValueの値より小さい間、繰り返し処理を行う。
         for ( int countInt = 1; countInt <= inputValue; countInt++) {
             // 画面に*を表示する
             System.out.print('*');
             // 5つ目の*印の表示後は以下の処理を行う
-            if ( countInt % newLineValue == 0) {
+            if ( countInt % NEW_LINE_VALUE == 0) {
                 // 改行処理を行う
                 System.out.println("");
             }
