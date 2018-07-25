@@ -20,28 +20,17 @@ public class E4_16 {
         // 画面から入力された値をinputValueに格納する
         int inputValue = standardInput.nextInt();
 
-        // ループ回数をカウントする変数
-        int countInt = 0;
         // 改行時使用する値
         final int newLineValue = 5;
 
         // countIntの値がinputValueの値より小さい間、繰り返し処理を行う。
-        while ( countInt < inputValue) {
+        for ( int countInt = 1; countInt <= inputValue; countInt++) {
             // 画面に*を表示する
             System.out.print('*');
-            // countIntをインクリメントする
-            countInt++;
-            // countIntがnewLineValueの値で割り切れる場合
+            // 5つ目の*印の表示後は以下の処理を行う
             if ( countInt % newLineValue == 0) {
                 // 改行処理を行う
                 System.out.println("");
-                // countIntの値がinputValueの値より小さい場合
-                if(countInt < inputValue) {
-                    // 画面に*を表示する
-                    System.out.print('*');
-                    // countIntをインクリメントする
-                    countInt++;
-                }
             }
         }
     }
