@@ -21,6 +21,25 @@ public class E4_19 {
         // 画面から入力された値を格納する変数
         int inputValue = 0;
 
+        // 1月表す変数
+        final int JANUARY = 1;
+        // 2月を表す変数
+        final int FEBRUARY = 2;
+        // 3月を表す変数
+        final int MARCH  = 3;
+        // 5月を表す変数
+        final int MAY = 5;
+        // 6月を表す変数
+        final int JUNE = 6;
+        // 8月を表す変数
+        final int AUGUST = 8;
+        // 9月を表す変数
+        final int SEPTEMBER = 9;
+        // 11月を表す変数
+        final int NOVEMBER = 11;
+        // 12月を表す変数
+        final int DECEMBER = 12;
+
         // ユーザが終了を選択するまでループし続ける
         do {
             // 条件に合致するまで、繰り返し処理を行う
@@ -31,25 +50,25 @@ public class E4_19 {
                 inputValue = standardInput.nextInt();
 
             // 入力された値が1～12以外の場合、再入力させる
-            } while (inputValue < 1 || inputValue > 12);
+            } while (inputValue < JANUARY || inputValue > DECEMBER);
 
             // 3・4・5月を選択された場合
-            if (inputValue >= 3 && inputValue <= 5) {
+            if (inputValue >= MARCH && inputValue <= MAY) {
                 // 入力月の季節を答える
                 System.out.println("それは春です。");
 
             // 6・7・8月を選択された場合
-            } else if (inputValue >= 6 && inputValue <= 8) {
+            } else if (inputValue >= JUNE && inputValue <= AUGUST) {
                 // 入力月の季節を答える
                 System.out.println("それは夏です。");
 
             // 9・10・11月を選択された場合
-            } else if (inputValue >= 9 && inputValue <= 11) {
+            } else if (inputValue >= SEPTEMBER && inputValue <= NOVEMBER) {
                 // 入力月の季節を答える
                 System.out.println("それは秋です。");
 
             // 12・1・2月を選択された場合
-            } else if (inputValue == 12 || inputValue == 1 || inputValue == 2) {
+            } else if (inputValue == DECEMBER || inputValue == JANUARY || inputValue == FEBRUARY) {
                 // 入力月の季節を答える
                 System.out.println("それは冬です。");
             }
