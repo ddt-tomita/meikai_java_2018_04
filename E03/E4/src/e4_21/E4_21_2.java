@@ -20,10 +20,10 @@ public class E4_21_2 {
         // 画面から入力された値を格納する変数
         int inputValue = 0;
         // 入力された値を制限するための変数
-        int valueZero = 0;
+        final int VALUE_ZERO = 0;
 
         // 画面から入力された値が０以下であれば繰り返し処理を行う
-        while (inputValue <= valueZero) {
+        while (inputValue <= VALUE_ZERO) {
             // プログラムの説明を行います。
             System.out.print("右下直角の三角形を表示します。");
             // 段数の入力を促す
