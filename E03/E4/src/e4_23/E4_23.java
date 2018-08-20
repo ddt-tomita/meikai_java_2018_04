@@ -1,6 +1,6 @@
 /**
  * 演習番号：演習4-23（P125）
- * 概要：n段のピラミッドを表示するプログラムを作成せよ
+ * 概要：n段のピラミッドを表示するプログラムを作成せよ。第i行目にはi%10を表示すること。
  * 作成者：富田 涼子
  * 作成日：2018/08/01
  * 修正日：2018/08/20
@@ -59,10 +59,10 @@ public class E4_23 {
             System.out.println("");
             // 1行出力したら、スペース部を1減らす
             spaceCountInt--;
-            // 次のピラミッドの段数を設定する
-            pyramidNumberOfStages++;
             // 次のピラミッドの行数を設定する
             pyramidNowRow++;
+            // 次のピラミッドの段数を設定する
+            pyramidNumberOfStages = pyramidNowRow % 10;
         }
     }
 }
