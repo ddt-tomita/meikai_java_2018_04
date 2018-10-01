@@ -4,7 +4,7 @@
  *       素数とは、2以上n未満のいずれかの数でも割り切ることのできない整数nのことである。
  * 作成者：富田 涼子
  * 作成日：2018/08/20
- * 修正日：2018/09/10
+ * 修正日：2018/09/12
  */
 package e4_24;
 
@@ -19,8 +19,8 @@ public class E4_24 {
 
         // 画面から入力された値を格納する変数
         int inputValue = 0;
-        // ゼロという数値を表す定数
-        final int VALUE_ZERO = 0;
+        // 素数計算のための制限値
+        final int LIMITING_VALUE = 2;
 
         // 以下、繰り返し処理
         do {
@@ -30,49 +30,36 @@ public class E4_24 {
             System.out.print("正の整数値：");
             // 画面から入力された値をinputValueに格納する
             inputValue = standardInput.nextInt();
-        // 画面から入力された値が０以上であれば終了
-        } while (inputValue <= VALUE_ZERO);
+        // 画面から入力された値が２以上であれば終了
+        } while (inputValue < LIMITING_VALUE);
 
 
-        // 素数計算のために割り算を行う開始値
-        final int START_VALUE = 2;
         // 割り算した余りを退避する変数
         int remainderValue = 0;
-        // 素数かどうか判定するためのカウンタ
-        int primeNumbersCounter = 0;
+        // 割り切れた時の余りを判定するための変数
+        final int DIVISIBLE_VALUE = 0;
+        // 入力値を半分にしたときの値(小数は切り捨てる)
+        final int HALF_VALUE = inputValue / 2;
 
-        // 入力値が2以上の場合
-        if(inputValue >= START_VALUE) {
-            // 2以上入力値以下の値をインクリメントしながらループする
-            for(int countValue = START_VALUE; countValue <= inputValue; countValue++) {
-                // 素数判定のために現在ループしている値で入力値が割り切れるかを確認する
-                remainderValue = inputValue % countValue;
-                // 入力値÷countValueで割り切れた場合
-                if(remainderValue == VALUE_ZERO) {
-                    // 割り切れた回数をカウントしていく
-                    primeNumbersCounter++;
-                    // 2回以上割り切れた場合
-                    if(primeNumbersCounter > START_VALUE) {
-                        // 素数でないことが確定したので、処理を抜ける
-                        break;
-                    }
-                }
-            }
+        // 2以上入力値以下の値をインクリメントしながらループする
+        for(int countValue = LIMITING_VALUE; countValue <= inputValue; countValue++) {
+            // 素数判定のために現在ループしている値で入力値が割り切れるかを確認する
+            remainderValue = inputValue % countValue;
 
-            // 2以上入力値以下で割り算をした際、入力値でしか割り切れなかった場合
-            if(primeNumbersCounter == 1) {
-                // 素数であることを画面に表示する
-                System.out.println( inputValue + "は素数です。");
-            // 2以上入力値以下で割り算をした際、入力値以外でも割り切れた場合
-            } else {
+            // 入力値以外で割り切れた場合は素数ではない
+            if( remainderValue == DIVISIBLE_VALUE && countValue != inputValue) {
                 // 素数ではないことを画面に表示する
                 System.out.println( inputValue + "は素数ではありません。");
-            }
+                // 素数でないことが確定したので、処理を抜ける
+                break;
 
-        // 入力値が2未満の場合
-        } else {
-            // 入力値が1だった場合、入力値は素数ではない
-            System.out.println( inputValue + "は素数ではありません。");
+                // 入力値÷２以上の値まで計算しても割り切れなかった場合は素数である
+                } else if (countValue > HALF_VALUE){
+                    // 素数であることを画面に表示する
+                    System.out.println( inputValue + "は素数です。");
+                    break;
+
+            }
         }
     }
 }
