@@ -3,15 +3,15 @@
  * 概要：合計だけでなく平均も求めるようにList4-18のプログラムを書き換えよ。
  * 作成者：富田 涼子
  * 作成日：2018/09/10
- * 修正日：2018/09/10
+ * 修正日：2018/09/17
  */
 package e4_25;
 
 import java.util.Scanner;
 
-// 正の整数値を読み込み、それが素数であるかどうかを判定するクラス
+// 読み込んだ整数を加算いき、合計も出力するクラス（合計が1,000を超えない範囲で加算する）
 public class E4_25_2 {
-    // 正の整数値を読み込み、それが素数であるかどうかを判定する
+    // 読み込んだ整数を加算していき、合計も出力する（合計が1,000を超えない範囲で加算する）
     public static void main(String[] args) {
         // 標準入力ストリームのインスタンス化をする
         Scanner standardInput = new Scanner(System.in);
@@ -24,54 +24,45 @@ public class E4_25_2 {
         // 以下、繰り返し処理
         do {
             // プログラムの説明を行う
-            System.out.println("素数であるかを判定します。");
-            // 正の整数値の入力を促す
-            System.out.print("正の整数値：");
+            System.out.println("整数を加算します。");
+            // 値の入力を促す
+            System.out.print("何個加算しますか：");
             // 画面から入力された値をinputValueに格納する
             inputValue = standardInput.nextInt();
-        // 画面から入力された値が０以上であれば終了
+        // 画面から入力された値が０以下であれば終了
         } while (inputValue <= VALUE_ZERO);
 
+        // 合計値を格納する変数
+        double sumValue = 0;
+        // 平均値を格納する変数
+        double aveValue = 0;
+        // 合計の制限値
+        final int LIMIT_VALUE = 1000;
 
-        // 素数計算のために割り算を行う開始値
-        final int START_VALUE = 2;
-        // 割り算した余りを退避する変数
-        int remainderValue = 0;
-        // 素数かどうか判定するためのカウンタ
-        int primeNumbersCounter = 0;
-
-        // 入力値が2以上の場合
-        if(inputValue >= START_VALUE) {
-            // 2以上入力値以下の値をインクリメントしながらループする
-            for(int countValue = START_VALUE; countValue <= inputValue; countValue++) {
-                // 素数判定のために現在ループしている値で入力値が割り切れるかを確認する
-                remainderValue = inputValue % countValue;
-                // 入力値÷countValueで割り切れた場合
-                if(remainderValue == VALUE_ZERO) {
-                    // 割り切れた回数をカウントしていく
-                    primeNumbersCounter++;
-                    // 2回以上割り切れた場合
-                    if(primeNumbersCounter > START_VALUE) {
-                        // 素数でないことが確定したので、処理を抜ける
-                        break;
-                    }
-                }
+        // 入力した値の数だけループする
+        for (int countValue = 1; countValue <= inputValue; countValue++) {
+            // 加算する値の入力を促す
+            System.out.print("整数：");
+            // 画面から入力された値をtmpValueに退避する
+            int tmpValue = standardInput.nextInt();
+            // 今までの合計値と今回の入力値を足して1,000を超える場合はループを終了する
+            if (sumValue + tmpValue > LIMIT_VALUE) {
+                // 合計が1,000を超えたのでメッセージを表示する
+                System.out.println("合計が1,000を超えました。");
+                // 合計が1,000を超えたのでメッセージを表示する
+                System.out.println("最後の数値は無視します。");
+                // このfor文から抜ける
+                break;
             }
-
-            // 2以上入力値以下で割り算をした際、入力値でしか割り切れなかった場合
-            if(primeNumbersCounter == 1) {
-                // 素数であることを画面に表示する
-                System.out.println( inputValue + "は素数です。");
-            // 2以上入力値以下で割り算をした際、入力値以外でも割り切れた場合
-            } else {
-                // 素数ではないことを画面に表示する
-                System.out.println( inputValue + "は素数ではありません。");
-            }
-
-        // 入力値が2未満の場合
-        } else {
-            // 入力値が1だった場合、入力値は素数ではない
-            System.out.println( inputValue + "は素数ではありません。");
+            // 入力された値をsumValueに足しこんでいく
+            sumValue += tmpValue;
+            // 合計値を入力回数で割って平均値を求める
+            aveValue = sumValue / countValue;
         }
+
+        // 入力された値の合計を出力する
+        System.out.println("合計は" + sumValue + "です。");
+        // 入力された値の平均を出力する
+        System.out.println("平均は" + aveValue + "です。");
     }
 }
