@@ -52,6 +52,11 @@ public class E4_25_1 {
             sumValue += tmpValue;
             // 合計値を入力回数で割って平均値を求める
             aveValue = sumValue / countValue;
+
+            修正案
+            １．入力回数をちゃんと外で定義する
+            ２．ループの中で最後のループだったらこの計算をするようにする？
+
         }
 
         // 入力された値の合計を出力する
