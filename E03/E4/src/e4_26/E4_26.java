@@ -4,7 +4,7 @@
  *       なお、読み込んだ負の数の個数は平均を求める分母から除外すること。
  * 作成者：富田 涼子
  * 作成日：2018/09/17
- * 修正日：2018/09/17
+ * 修正日：2018/10/29
  */
 package e4_26;
 
@@ -30,7 +30,7 @@ public class E4_26 {
             System.out.print("何個加算しますか：");
             // 画面から入力された値をinputValueに格納する
             inputValue = standardInput.nextInt();
-        // 画面から入力された値が０以下であれば終了
+        // 画面から入力された値が０以下であれば繰り返し入力を促す
         } while (inputValue <= VALUE_ZERO);
 
         // 合計値を格納する変数
@@ -57,9 +57,9 @@ public class E4_26 {
             sumValue += tmpValue;
             // 平均値を算出するための分母をインクリメントしていく
             divisionValue++;
-            // 合計値を入力回数(負の値が入力された回数は除く)で割って平均値を求める
-            aveValue = sumValue / divisionValue;
         }
+        // 合計値を入力回数(負の値が入力された回数は除く)で割って平均値を求める
+        aveValue = sumValue / divisionValue;
 
         // 入力された値の合計を出力する
         System.out.println("合計は" + sumValue + "です。");
