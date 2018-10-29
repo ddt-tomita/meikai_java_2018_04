@@ -29,7 +29,7 @@ public class E4_25_1 {
 			System.out.print("何個加算しますか：");
 			// 画面から入力された値をinputValueに格納する
 			inputValue = standardInput.nextInt();
-		// 画面から入力された値が０以下であれば終了
+		// 画面から入力された値が０以下であれば繰り返し入力を促す
 		} while (inputValue <= VALUE_ZERO);
 
 		// 合計値を格納する変数
@@ -56,8 +56,15 @@ public class E4_25_1 {
 			countValue++;
 		}
 
-		// 合計値を入力回数で割って平均値を求める
-		aveValue = sumValue / countValue;
+		// 入力回数が０回以上の場合
+		if(countValue > VALUE_ZERO) {
+			// 合計値を入力回数で割って平均値を求める
+			aveValue = sumValue / countValue;
+		// 入力回数が０回の場合
+		} else {
+			// 平均回数は０回となる
+			aveValue = VALUE_ZERO;
+		}
 
 		// 入力された値の合計を出力する
 		System.out.println("合計は" + sumValue + "です。");
