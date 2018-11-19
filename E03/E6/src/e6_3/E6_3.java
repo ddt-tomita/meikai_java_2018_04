@@ -16,23 +16,26 @@ public class E6_3 {
 
 		// 要素数を表す値
 		final int ELEMENT_COUNT = 5;
-		// 要素数を表す値
-		final double ELEMENT_COUNT2 = 10;
-		// 要素数を表す値
-		final double ELEMENT_COUNT3 = 1;
+		//
+		double tmp = 0;
+		//
+		double i10 = 1.1;
 		// 要素型がdouble型の配列
 		double[] doubleValue = new double[ELEMENT_COUNT];
 
 		// 配列の数だけ繰り返し処理を行う
-		for (int countNumber = 0; countNumber < ELEMENT_COUNT; countNumber++) {
+		for (int countNumber = 0; countNumber < doubleValue.length; countNumber++) {
 			// 要素型がdouble型の配列に値を入れていく
-			doubleValue[countNumber] = countNumber + ELEMENT_COUNT3 + (ELEMENT_COUNT3 / ELEMENT_COUNT2 + countNumber / ELEMENT_COUNT2);
+			doubleValue[countNumber] = tmp += i10;
 		}
 
 		// 配列の数だけ繰り返し処理を行う
 		for (int countNumber = 0; countNumber < ELEMENT_COUNT; countNumber++) {
 			// 要素型がdouble型の配列の値を表示していく
-			System.out.println("doubleValue[" + countNumber + "] = " + doubleValue[countNumber]);
+			System.out.print("doubleValue[" + countNumber + "] = ");
+			System.out.printf("%2.1f",doubleValue[countNumber]);
+			System.out.println("");
+//			System.out.println("doubleValue[" + countNumber + "] = " + doubleValue[countNumber]);
 		}
 	}
 }
