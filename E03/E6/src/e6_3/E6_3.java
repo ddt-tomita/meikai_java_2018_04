@@ -4,7 +4,7 @@
  * 		 表示するプログラムを作成せよ。
  * 作成者：富田 涼子
  * 作成日：2018/11/14
- * 修正日：2018/11/14
+ * 修正日：2018/11/21
  */
 package e6_3;
 
@@ -16,26 +16,25 @@ public class E6_3 {
 
 		// 要素数を表す値
 		final int ELEMENT_COUNT = 5;
-		//
-		double tmp = 0;
-		//
-		double i10 = 1.1;
-		// 要素型がdouble型の配列
-		double[] doubleValue = new double[ELEMENT_COUNT];
+		// 退避用変数
+		double temporaryValue = 0;
+		// 加算値
+		final double ADDED_VALUE = 1.1;
+		// 今回出力対象となる要素型がdouble型の配列
+		double[] outputValue = new double[ELEMENT_COUNT];
 
-		// 配列の数だけ繰り返し処理を行う
-		for (int countNumber = 0; countNumber < doubleValue.length; countNumber++) {
-			// 要素型がdouble型の配列に値を入れていく
-			doubleValue[countNumber] = tmp += i10;
+		// 要素数分繰り返し処理を行う
+		for (int countNumber = 0; countNumber < outputValue.length; countNumber++) {
+			// 今回出力対象となる要素型がdouble型の配列に値を入れていく
+			outputValue[countNumber] = temporaryValue += ADDED_VALUE;
 		}
 
-		// 配列の数だけ繰り返し処理を行う
-		for (int countNumber = 0; countNumber < ELEMENT_COUNT; countNumber++) {
-			// 要素型がdouble型の配列の値を表示していく
+		// 要素数分繰り返し処理を行う
+		for (int countNumber = 0; countNumber < outputValue.length; countNumber++) {
+			// 配列の値を表示する
 			System.out.print("doubleValue[" + countNumber + "] = ");
-			System.out.printf("%2.1f",doubleValue[countNumber]);
+			System.out.printf("%2.1f",outputValue[countNumber]);
 			System.out.println("");
-//			System.out.println("doubleValue[" + countNumber + "] = " + doubleValue[countNumber]);
 		}
 	}
 }
