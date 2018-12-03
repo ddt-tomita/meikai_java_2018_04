@@ -1,17 +1,18 @@
 /**
- * 演習番号：演習4-25（P129）
- * 概要：合計だけでなく平均も求めるようにList4-18のプログラムを書き換えよ。
+ * 演習番号：演習4-26（P129）
+ * 概要：合計だけでなく平均も求めるようにList4-19のプログラムを書き換えよ。
+ *       なお、読み込んだ負の数の個数は平均を求める分母から除外すること。
  * 作成者：富田 涼子
- * 作成日：2018/09/10
- * 修正日：2018/09/17
+ * 作成日：2018/09/17
+ * 修正日：2018/10/29
  */
-package e4_25;
+package e4_26;
 
 import java.util.Scanner;
 
-// 読み込んだ整数を加算いき、合計も出力するクラス（合計が1,000を超えない範囲で加算する）
-public class E4_25_2 {
-    // 読み込んだ整数を加算していき、合計も出力する（合計が1,000を超えない範囲で加算する）
+// 読み込んだ整数を加算していき、合計も出力するクラス（負の値は加算しない）
+public class E4_26 {
+    // 読み込んだ整数を加算していき、合計も出力する（負の値は加算しない）
     public static void main(String[] args) {
         // 標準入力ストリームのインスタンス化をする
         Scanner standardInput = new Scanner(System.in);
@@ -29,15 +30,15 @@ public class E4_25_2 {
             System.out.print("何個加算しますか：");
             // 画面から入力された値をinputValueに格納する
             inputValue = standardInput.nextInt();
-        // 画面から入力された値が０以下であれば終了
+        // 画面から入力された値が０以下であれば繰り返し入力を促す
         } while (inputValue <= VALUE_ZERO);
 
         // 合計値を格納する変数
         double sumValue = 0;
         // 平均値を格納する変数
         double aveValue = 0;
-        // 合計の制限値
-        final int LIMIT_VALUE = 1000;
+        // 平均値を算出するための分母をあらわす変数
+        int divisionValue = 0;
 
         // 入力した値の数だけループする
         for (int countValue = 1; countValue <= inputValue; countValue++) {
@@ -45,20 +46,20 @@ public class E4_25_2 {
             System.out.print("整数：");
             // 画面から入力された値をtmpValueに退避する
             int tmpValue = standardInput.nextInt();
-            // 今までの合計値と今回の入力値を足して1,000を超える場合はループを終了する
-            if (sumValue + tmpValue > LIMIT_VALUE) {
-                // 合計が1,000を超えたのでメッセージを表示する
-                System.out.println("合計が1,000を超えました。");
-                // 合計が1,000を超えたのでメッセージを表示する
-                System.out.println("最後の数値は無視します。");
-                // このfor文から抜ける
-                break;
+            // 負の値が入力された場合
+            if (tmpValue < VALUE_ZERO) {
+                // 負の値が加算の対象にならないという説明文を出力する
+                System.out.println("負の数は加算しません。");
+                // continue以下の処理は行わず、ループの頭に戻る。
+                continue;
             }
             // 入力された値をsumValueに足しこんでいく
             sumValue += tmpValue;
-            // 合計値を入力回数で割って平均値を求める
-            aveValue = sumValue / countValue;
+            // 平均値を算出するための分母をインクリメントしていく
+            divisionValue++;
         }
+        // 合計値を入力回数(負の値が入力された回数は除く)で割って平均値を求める
+        aveValue = sumValue / divisionValue;
 
         // 入力された値の合計を出力する
         System.out.println("合計は" + sumValue + "です。");
