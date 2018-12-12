@@ -4,7 +4,7 @@
  * 		 最下段には、インデックスを10で割った剰余を表示すること。
  * 作成者：富田 涼子
  * 作成日：2018/11/21
- * 修正日：2018/12/03
+ * 修正日：2018/12/12
  */
 package e6_4;
 
@@ -60,14 +60,16 @@ public class E6_4 {
 		}
 
 		// フッター１行目の変数(仕切り線)
-		String firstLine = "";
+		StringBuffer firstLine = new StringBuffer("");
+		// フッター１行目に結合していく文字列
+		final String JOIN_STRING = "--";
 		// フッター２行目の変数(インデックスを10で割った余剰)
 		String secondLine = "";
 
 		// フッター用のループ文
 		for (int i = 0; i < ELEMENT_COUNT; i++) {
-			// 要素数の幅に合わせて仕切り線を作っていく
-			firstLine += "--";
+			// 要素数の幅に合わせて仕切り線を結合していく
+			firstLine.append(JOIN_STRING);
 			// 最下段にインデックスを振っていく
 			secondLine+= i % NUMBER_TEN + " ";
 		}
